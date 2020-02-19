@@ -9,23 +9,9 @@ function List(props){
             {props.cards.map(card => 
                 <BugCard text={card.text}/>
             )}
-         
-
         </div>
-   
-    
-   
    )
 }
-
-
-
-
-
-
-
-      
-
 
 
 const styles ={
@@ -33,8 +19,8 @@ const styles ={
         backgroundColor: '#ccc',
         borderRadius: 3,
         width:300,
-        padding: 6
-
+        padding: 8,
+        marginRight: 8
     }
 }
 

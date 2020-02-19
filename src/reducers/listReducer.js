@@ -1,6 +1,6 @@
 const initialState = [
     {
-        title:'TEST TITLE',
+        title:'First List',
         id:0,
         cards:[
            { 
@@ -10,6 +10,24 @@ const initialState = [
            {
                id:1,
                text:"do this too!"
+           }
+        ]
+    },
+    {
+        title:'Second List',
+        id:1,
+        cards:[
+           { 
+               id:0,
+            text:"Wow this bug is annoying"
+           },
+           {
+               id:1,
+               text:"console.log('HELP ME')!"
+           },
+           {
+               id:2,
+               text:"HELLo worLd"
            }
         ]
     }

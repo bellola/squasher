@@ -8,11 +8,19 @@ function App(props) {
   return (
     <div className="App">
      <h2>SQUASHER</h2>
-     {props.lists.map(list=><List title={list.title}  cards={list.cards} />
+     <div style={styles.listsContainer}>
+        {props.lists.map(list=><List title={list.title}  cards={list.cards} />
      )}
-  
+     </div>
     </div>
   );
+}
+
+const styles = {
+  listsContainer:{
+    display: 'flex',
+    flexDirection:'row',
+  }
 }
 
 const  mapStateToProps = state =>({
