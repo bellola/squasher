@@ -6,17 +6,12 @@ function BugCard(props){
   console.log(props)
     return(
         <Card>
-       
-          <Typography gutterBottom>
-            {props.card.map(card=>card.text)}
-          </Typography>
+          
+    <Typography gutterBottom>{props.text}</Typography>
          
       </Card>
     )
 }
 
-// const styles = {
-//     container:{}
-// }
 
 export default BugCard
