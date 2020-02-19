@@ -1,10 +1,28 @@
 import React from 'react'
+import BugCard from './Card'
 
 
-const List =()=>{
+function List(props){
     return(
-        <h3>List</h3>
-    )
+        <div style={styles.container}>
+            <h4>{props.title}</h4>
+            <BugCard />
+
+        </div>
+   
+    
+   
+   )
+}
+
+const styles ={
+    container: {
+        backgroundColor: '#ccc',
+        borderRadius: 3,
+        width:300,
+        padding: 6
+
+    }
 }
 
 export default List
