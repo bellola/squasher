@@ -37,7 +37,7 @@ class AddButtom extends Component{
         const buttonName = list ? 'Add list' : "Add card"
         const buttonOpaticy = list ? 1 : 0.5
         const buttonTextColor = list ? "white" : "inherit"
-        const buttonBackground = list ? "rgba(0,0,0.15)" : "inherit"
+        const buttonBackground = list ? "rgba(0,0,0,.15)" : "inherit"
 
 
 
@@ -46,7 +46,8 @@ class AddButtom extends Component{
             <div 
             onClick={this.openForm}
             style={{
-                ...styles.buttonContainer,
+                ...styles.openButtonGroup,
+                height: 36,
                 opacity:buttonOpaticy, 
                 color:buttonTextColor, 
                 backgroundColor:buttonBackground
@@ -104,13 +105,12 @@ class AddButtom extends Component{
 }
 
 const styles = {
-    buttonContainer :{
+    openButtonGroup :{
         display: 'flex',
         alignItems: 'center',
         cursor: 'pointer',
         borderRadius: 3,
-        heigh: 36,
-        width: 270,
+        width: 272,
         paddingLeft: 10
     },
     formButtonGroup:{
