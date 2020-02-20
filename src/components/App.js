@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './List'
 import {connect} from 'react-redux'
+import AddButton from './AddButton'
 
 
 
@@ -11,6 +12,7 @@ function App(props) {
      <div style={styles.listsContainer}>
         {props.lists.map(list=><List key={list.id} title={list.title}  cards={list.cards} />
      )}
+     <AddButton list />
      </div>
     </div>
   );
