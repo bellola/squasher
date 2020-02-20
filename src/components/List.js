@@ -1,5 +1,6 @@
 import React from 'react'
 import BugCard from './BugCard'
+import AddButton from './AddButton'
 
 
 function List(props){
@@ -7,9 +8,11 @@ function List(props){
         <div style={styles.container}>
             <h4>{props.title}</h4>
             {props.cards.map(card => 
-                <BugCard text={card.text}/>
+                <BugCard key={card.id} text={card.text}/>
             )}
+             <AddButton />
         </div>
+       
    )
 }
 

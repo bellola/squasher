@@ -9,7 +9,7 @@ function App(props) {
     <div className="App">
      <h2>SQUASHER</h2>
      <div style={styles.listsContainer}>
-        {props.lists.map(list=><List title={list.title}  cards={list.cards} />
+        {props.lists.map(list=><List key={list.id} title={list.title}  cards={list.cards} />
      )}
      </div>
     </div>
