@@ -2,17 +2,22 @@ import React from 'react'
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
+import {Draggable} from 'react-beautiful-dnd'
 
 function BugCard(props){
-  console.log(props)
     return(
-        <Card style={styles.cardContainer}>
-        <CardContent>
-          <Typography gutterBottom>{props.text}</Typography>
-        </CardContent>
+      <Draggable draggableId={String(props.id)} index={props.index}>
+        {provided => (
+            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+              <Card style={styles.cardContainer}>
+                <CardContent>
+                  <Typography gutterBottom>{props.text}</Typography>
+                </CardContent>
+              </Card>
+            </div>
+        )}
+      </Draggable>
     
-         
-      </Card>
     )
 }
 

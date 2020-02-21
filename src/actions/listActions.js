@@ -6,3 +6,22 @@ export const addList = title => {
         payload:title
     }
 }
+
+export const sort = (
+   dropabbleIdStart,
+    dropabbleIdEnd,
+    droppableIndexStart,
+    droppableIndexEnd,
+    draggableId
+) => {
+    return {
+        type: CONSTANTS.DRAG_HAPPENED,
+        payload:{
+            dropabbleIdStart,
+            dropabbleIdEnd,
+            droppableIndexStart,
+            droppableIndexEnd,
+            draggableId
+        }
+    }
+}
