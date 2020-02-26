@@ -2,7 +2,7 @@ import React from 'react';
 import List from './List'
 import {connect} from 'react-redux'
 import AddButton from './AddButton'
-import {DragDropContext} from 'react-beautiful-dnd'
+import {DragDropContext, Droppable} from 'react-beautiful-dnd'
 import {sort} from '../actions'
 import styled from 'styled-components'
 
@@ -17,7 +17,7 @@ function App(props) {
 
   function onEnd (result){
     //TODO
-    const {destination, source, draggableId} = result
+    const {destination, source, draggableId, type} = result
     if(!destination){
       return
     } else{
@@ -27,7 +27,8 @@ function App(props) {
           destination.droppableId,
           source.index,
           destination.index,
-          draggableId
+          draggableId,
+          type
         )
       )
     }
@@ -38,11 +39,17 @@ function App(props) {
     <DragDropContext onDragEnd={onEnd} >
         <div className="App">
         <h2>SQUASHER</h2>
-            <ListContainer>
-                {props.lists.map(list=><List listID={list.id} key={list.id} title={list.title}  cards={list.cards} />
+          <Droppable droppableId="all" direction="horizontal" type="list">
+            {provided => (
+
+              <ListContainer {...provided.droppableProps} ref={provided.innerRef}>
+                  {props.lists.map((list, index)=><List listID={list.id} key={list.id} title={list.title}  cards={list.cards} index={index}/>
+              )}
+              {provided.placeholder}
+              <AddButton list />
+              </ListContainer>
             )}
-            <AddButton list />
-            </ListContainer>
+          </Droppable> 
         </div>
     </DragDropContext>
    

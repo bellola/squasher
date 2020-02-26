@@ -1,7 +1,7 @@
 import React from 'react'
 import BugCard from './BugCard'
 import AddButton from './AddButton'
-import {Droppable} from 'react-beautiful-dnd'
+import {Droppable, Draggable} from 'react-beautiful-dnd'
 import styled from 'styled-components'
 
 const ListContainer = styled.div`
@@ -17,18 +17,25 @@ const ListContainer = styled.div`
 function List(props){
   
     return(
-        <Droppable droppableId={String(props.listID)}>
-           {(provided) => (
-                <ListContainer {...provided.droppableProps}  ref={provided.innerRef} >
-                <h4>{props.title}</h4>
-                {props.cards.map((card, index) => 
-                    <BugCard key={card.id} index={index} text={card.text} id={card.id}/>
-                )}
-                <AddButton  listID={props.listID}  />
-                {provided.placeholder}
+        <Draggable draggableId={String(props.listID)} index={props.index}>
+            {provided => (
+            <ListContainer {...provided.draggableProps}  ref={provided.innerRef} {...provided.dragHandleProps} >
+                <Droppable droppableId={String(props.listID)}>
+                  {provided => (
+                   <div {...provided.droppableProps}  ref={provided.innerRef}>
+                    <h4>{props.title}</h4>
+                    {props.cards.map((card, index) => 
+                        <BugCard key={card.id} index={index} text={card.text} id={card.id}/>
+                    )}
+                    <AddButton  listID={props.listID}  />
+                    {provided.placeholder}
+                  </div>
+                  )}
+               </Droppable>
             </ListContainer>
-           )}
-        </Droppable>
+            )}
+            
+        </Draggable>
    )
 }
 
