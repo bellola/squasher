@@ -10,7 +10,7 @@ const ListContainer = styled.div`
     width:300px;
     padding: 8px;
     margin-right: 8px;
-    height: 100%
+    height: 100%;
 `
 
 
@@ -27,30 +27,18 @@ function List(props){
                     {props.cards.map((card, index) => 
                         <BugCard key={card.id} index={index} text={card.text} id={card.id}/>
                     )}
-                    <AddButton  listID={props.listID}  />
+                   
                     {provided.placeholder}
                   </div>
                   )}
                </Droppable>
+               <AddButton  listID={props.listID}  />
             </ListContainer>
             )}
             
         </Draggable>
    )
 }
-
-
-// const styles ={
-//     container: {
-//         backgroundColor: '#ccc',
-//         borderRadius: 3,
-//         width:300,
-//         padding: 8,
-//         marginRight: 8,
-//         height: "100%"
-//     }
-// }
-
 
 
 

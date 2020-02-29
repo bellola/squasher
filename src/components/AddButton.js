@@ -147,12 +147,12 @@ const styles = {
         cursor: 'pointer',
         borderRadius: 3,
         width: 272,
-        paddingLeft: 10
+        paddingLeft: 10,
     },
     formButtonGroup:{
         marginTop: 8,
         display: 'flex',
-        alignItems: 'center'
+        alignItems: 'center',
     }
 }
 
