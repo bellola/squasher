@@ -37,8 +37,8 @@ function App(props) {
 
   return (
     <DragDropContext onDragEnd={onEnd} >
-        <div className="App">
-        <h2>SQUASHER</h2>
+        <div className="App" style={{fontFamily:'monospace'}}>
+        <h2 style={{marginBottom:100, fontFamily:"monospace"}}>SQUASHER</h2>
           <Droppable droppableId="all" direction="horizontal" type="list">
             {provided => (
 

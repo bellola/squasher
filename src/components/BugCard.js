@@ -1,6 +1,5 @@
 import React from 'react'
 import Card from '@material-ui/core/Card';
-import Typography from '@material-ui/core/Typography';
 import CardContent from '@material-ui/core/CardContent';
 import {Draggable} from 'react-beautiful-dnd'
 import styled from 'styled-components'
@@ -20,7 +19,7 @@ function BugCard(props){
          
                 <Card>
                   <CardContent>
-                    <Typography gutterBottom>{props.text}</Typography>
+                    <h3>{props.text}</h3>
                   </CardContent>
                 </Card>
          

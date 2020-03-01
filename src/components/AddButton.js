@@ -69,7 +69,7 @@ class AddButtom extends Component{
         const buttonName = list ? 'Add list' : "Add card"
         const buttonOpaticy = list ? 1 : 0.5
         const buttonTextColor = list ? "white" : "inherit"
-        const buttonBackground = list ? "rgba(0,0,0,.15)" : "inherit"
+        const buttonBackground = list ? "#FD6C0D" : "inherit"
 
 
 
@@ -116,7 +116,8 @@ class AddButtom extends Component{
                         width: '100%',
                         overflow: 'hidden',
                         outline: 'none',
-                        border: 'none'
+                        border: 'none',
+                        fontFamily: 'monospace'
 
                     }}
                     />
@@ -126,10 +127,11 @@ class AddButtom extends Component{
                     onMouseDown={list ? this.handleAddList : this.handleAddCard}
                     variant="contained" 
                     style={{color:'white', 
-                    backgroundColor:'#5aac44'}}>
+                    fontFamily: 'monospace',
+                    backgroundColor:'#FD6C0D'}}>
                         {buttonTitle}
                         </Button>
-                    <Icon style={{marginLeft:8, cursor: "pointer"}}>close</Icon>
+                    <Icon style={{marginLeft:8, cursor: "pointer"}} onClick={this.closeForm}>close</Icon>
                 </div>
             </div>
         )
