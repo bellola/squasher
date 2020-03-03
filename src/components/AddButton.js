@@ -8,6 +8,7 @@ import {addList, addCard} from '../actions'
 
 
 
+
 class AddButtom extends Component{
 
     state = {
@@ -35,6 +36,7 @@ class AddButtom extends Component{
         })
     }
 
+    
     handleAddList = () =>{
         const {dispatch} = this.props
         const {text} = this.state

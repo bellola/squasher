@@ -16,7 +16,6 @@ const ListContainer = styled.div`
 function App(props) {
 
   function onEnd (result){
-    //TODO
     const {destination, source, draggableId, type} = result
     if(!destination){
       return
@@ -38,7 +37,7 @@ function App(props) {
   return (
     <DragDropContext onDragEnd={onEnd} >
         <div className="App" style={{fontFamily:'monospace'}}>
-        <h2 style={{marginBottom:100, fontFamily:"monospace"}}>SQUASHER</h2>
+        <h2 style={{marginBottom:100, fontFamily:"monospace"}}>SQUASH</h2>
           <Droppable droppableId="all" direction="horizontal" type="list">
             {provided => (
 

@@ -1,0 +1,4 @@
+- Make cards swipeable with // react-swipable https://www.npmjs.com/package/react-swipeable//
+- Port app to electron
+- Create backend (Try either firebase or aws)
+- Make logo and finish styling 
